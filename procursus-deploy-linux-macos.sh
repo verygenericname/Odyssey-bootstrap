@@ -109,13 +109,12 @@ curl -sLOOOOO https://github.com/coolstar/Odyssey-bootstrap/raw/master/bootstrap
 if [ ! "${ARM}" = yes ]; then
 	echo "(2) Copying resources to your device..."
 	echo "Default password is: alpine"
-	echo "it will ask for password 7 times"
+	echo "it will ask for password 6 times"
 	cat bootstrap_1600.tar.gz | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/bootstrap_1600.tar.gz"
 	cat bootstrap_1700.tar.gz | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/bootstrap_1700.tar.gz"
 	cat org.coolstar.sileo_2.3_iphoneos-arm.deb | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/org.coolstar.sileo_2.3_iphoneos-arm.deb"
 	cat org.swift.libswift_5.0-electra2_iphoneos-arm.deb | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/org.swift.libswift_5.0-electra2_iphoneos-arm.deb"
-	cat odysseyra1n-install.bash | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/odysseyra1n-install.bash"
-	ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "chmod +x /var/root/odysseyra1n-install.bash"
+	cat odysseyra1n-install.bash | ssh -qp28605 -o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null" root@127.0.0.1 "cat > /var/root/odysseyra1n-install.bash | chmod +x /var/root/odysseyra1n-install.bash"
 fi
 echo "(3) Bootstrapping your device..."
 if [ "${ARM}" = yes ]; then
